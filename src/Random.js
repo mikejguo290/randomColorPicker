@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Button} from './Button'
+
 
 //Random‘s job is to store a random color, and to use that color to update the screen’s background.
 
