@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//Random‘s job is to store a random color, and to use that color to update the screen’s background.
+
 class Random extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={ color : [100, 200, 100] };
+  }
   componentDidMount() {
     this.applyColor();
   }
