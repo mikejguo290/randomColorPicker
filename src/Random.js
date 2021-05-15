@@ -11,6 +11,10 @@ class Random extends React.Component {
     this.state={ color : [100, 200, 100] };
   }
 
+  handleClick(){
+    this.setState({color: this.chooseColor()});
+  }
+
   componentDidMount() {
     this.applyColor();
   }
