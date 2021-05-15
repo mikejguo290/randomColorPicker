@@ -10,6 +10,7 @@ class Random extends React.Component {
     super(props);
     this.state={ color : [100, 200, 100] };
   }
+
   componentDidMount() {
     this.applyColor();
   }
@@ -23,6 +24,9 @@ class Random extends React.Component {
   }
 
   isLight() {
+    /*The button is to be light if the background is dark and dark if the background is light.
+    this.isLight() returns a boolean based on whether the sum of RGB is greater smaller roughly256/2*3 or not. 
+    // white is (256, 256, 256); higher RGB values mean lighter colors, */
     const rgb = this.state.color;
     return rgb.reduce((a,b) => a+b) < 127 * 3;
   }
@@ -33,6 +37,7 @@ class Random extends React.Component {
   }
 
   chooseColor() {
+    // randomly selects a color. returns an array of RGB colors chosen at random
     const random = [];
     for (let i = 0; i < 3; i++) {
       random.push(Math.floor(Math.random()*256));
@@ -46,6 +51,7 @@ class Random extends React.Component {
         <h1 className={this.isLight() ? 'white' : 'black'}>
         Your color is {this.formatColor(this.state.color)}
         </h1>
+        <Button light={this.isLight()}/>
       </div>
     );
   }
